@@ -13,18 +13,17 @@ h1,h2,h3,h4,h5,h6 {
 .content {
     text-align: center;
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns:1fr;
     justify-items: center;
     gap: 20px;
     grid-template-areas: 
-        " . banner . "
-        " . contentfirst . "
-        " . contentsecond . "
-        " . contentthird . "
-        " . footer . ";
+        "banner"
+        "contentfirst"
+        "contentsecond"
+        "contentthird"
+        "footer";
 }
 .banner__wrapper {
-    margin-top: 32px;
     padding: 32px;
     box-shadow: 10px 10px 100px #fff;
     grid-area: banner;
@@ -62,12 +61,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 .nav-bar__logo {
     margin-right: auto;
-    width: 140px;
+    padding-right: 5%;
+    min-width: 15%;
 }
 .nav-bar__button {
     margin-left: auto;
-    width: 100px;
-    height: 28px;
+    min-width: 150px;
     border-radius: 30px;
     border: 1px solid #fff;
     background-color: #fff; 
@@ -82,20 +81,20 @@ h1,h2,h3,h4,h5,h6 {
 }
 .content__title {
     margin-bottom: 20px;
+    padding: 0 15%;
 }
 .content__desc {
     margin-bottom: 20px;
+    padding: 0 15%;
 }
 .content__img {
     display: block;
     margin: 0 auto;
     margin-bottom: 24px;
+    width: 50%;
 }
-.img--w300 {
-    width: 300px;
-}
-.img--w250 {
-    width: 250px;
+.img--width-70 {
+    width: 70%;
 }
 .content__subtitle {
     margin-bottom: 24px;
@@ -105,6 +104,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .content__paragraph {
     margin-bottom: 32px;
+    padding: 0 15%;
 }
 .footer {
     padding: 16px;
@@ -161,6 +161,7 @@ h1,h2,h3,h4,h5,h6 {
 .footer__paragraph {
     margin-bottom: 16px;
     opacity: 0.7;
+    padding-right: 50%;
 }
 .footer__icon {
     filter: brightness(0) invert();
@@ -222,53 +223,62 @@ h1,h2,h3,h4,h5,h6 {
     margin: 12px 0;
     font-size: 12px;
 }
+.content__wrapper {
+    text-align: center;
+}
 @media screen and (min-width: 840px) {
     .banner__flex-wrapper {
         display: flex;
+        text-align: center;
     }
     .content__wrapper {
         padding: 32px;
-        text-align: left;
+        text-align: center;
+        align-self: center;
+    }
+    .content__paragraph {
+        padding: 0;
+    }
+    .content__img {
+        max-width: 80%;
+        min-width: 45%;
+    }
+    .img--width {
+        min-width: 40%;
+    }
+    .content__text-wrapper:nth-of-type(1) {
+        margin-left: 32px;
     }
     .content__text-wrapper {
-        margin-right: 100px;
-    }
-    .content__text2-wrapper {
-       margin-left: 100px; 
+        align-self: center;
     }
     .content__first-wrapper {
         display: flex;
         flex-direction: row-reverse;
-        width: 640px;
+        width: 80%;
         text-align: left;
     }
     .content__second-wrapper {
         display: flex;
-        width: 640px;
+        width: 80%;
         text-align: left;
     }
     .content__third-wrapper {
         display: flex;
         flex-direction: row-reverse;
-        width: 640px;
+        width: 80%;
         text-align: left;
     }
     .footer__grid-wrapper {
         display: flex;
-        width: 600px;
     }
     .nav-bar__logo {
-        height: 28px;
-        width: 140px;
-    }
-    .content__img {
-        width: 200px;
-        height: 200px;
-        align-self: center;
+        width: 10%;
+        height: 10%;
     }
     .footer {
         display: flex;
-        height: 600px;
+        height: 100%;
         margin: 120px 0 32px;
         position: relative;
     }
@@ -280,11 +290,13 @@ h1,h2,h3,h4,h5,h6 {
         width: max-content
     }
     .footer__grid-wrapper {
-        width: 800px;
-        height: 600px;
+        width: 90%;
         padding: 0;
         margin-bottom: 32px;
         box-shadow: 0px 0px 0px rgb(199, 199, 199);
+    }
+    .footer__paragraph {
+        padding: 0;
     }
     .footer__flex-wrapper {
         align-self: flex-end;
@@ -295,7 +307,7 @@ h1,h2,h3,h4,h5,h6 {
         display: block;
         align-self: center;
         width: 33%;
-        margin-top: 100px;
+        margin-top: 60px;
     }
     .footer__external-wrapper {
         display: flex;
@@ -304,15 +316,7 @@ h1,h2,h3,h4,h5,h6 {
         justify-content: flex-end;
     }
     .copyright__wrapper {
-        margin-top: 172px;
-    }
-    .img--desktop-fix {
-        width: 420px;
-        height: 340px;
-        margin-bottom: 10px;
-    }
-    .img__flex-wrapper {
-        align-self: flex-end;
+        margin-top: 148px;
     }
     .footer__mail {
         margin-bottom: 108px;
